@@ -44,6 +44,14 @@ wget https://ftp.gnu.org/gnu/gcc/gcc-12.5.0/gcc-12.5.0.tar.xz
 └── README.md
 ```
 
+## 🐳 从Docker Hub拉取预构建镜像
+
+无需本地编译，可直接从 Docker Hub 拉取已经构建好的工具链镜像：
+
+```bash
+docker pull lipengin1975/loongarch64-gcc:12.5.0-binutils-2.43.1
+```
+
 ## 🚀 构建镜像
 
 ```bash
@@ -80,7 +88,7 @@ echo 'int main(){return 0;}' | gcc -x c - -o test && ./test && rm test
 - 动态库配置：自动写入 `/etc/ld.so.conf.d/gcc-12.5.0.conf` 并执行 `ldconfig`
 - 默认 PATH 已经预置新版工具链优先
 
-##  关键构建细节说明（对应 Dockerfile）
+## 📋 关键构建细节说明（对应 Dockerfile）
 
 1. 先编译独立新版 binutils，后续 GCC configure、编译阶段强制使用这套 as/ld，不使用系统 ld
 2. 更新 `config.sub` / `config.guess`，解决老版本脚本识别 loongarch64 失败问题
