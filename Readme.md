@@ -1,4 +1,4 @@
-> [中文版本 / Chinese Version](gcc/Readme.zh-CN.md)
+> [中文版本 / Chinese Version](Readme.zh-CN.md)
 
 # GCC 12.5.0 + Binutils 2.43.1 LoongArch64 Docker Toolchain Builder
 > Dockerfile based on LoongNix 20, builds GCC 12.5.0 and Binutils 2.43.1 natively on LoongArch64, producing loongarch64-linux-gnu toolchain (LP64D ABI)
